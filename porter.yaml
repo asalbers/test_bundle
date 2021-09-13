@@ -40,6 +40,15 @@ install:
         - name: "test_value1"
           jsonPath: "$.id"
   - exec:
+      description: "transcoding back to integers"
+      command: ./helpers.sh
+      arguments:
+        - reconvert
+        - "{{bundle.outputs.test_value1}}"
+      outputs: 
+        - name: "test_value1"
+          regex: "(.*)"
+  - exec:
       description: "echoing values"
       command: echo
       arguments:

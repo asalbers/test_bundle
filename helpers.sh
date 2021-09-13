@@ -13,5 +13,8 @@ uninstall() {
   echo Goodbye World
 }
 
+reconvert() {
+  printf "%.0f\n" "$1"
+}
 # Call the requested function and pass the arguments as-is
 "$@"
